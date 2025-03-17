@@ -14,10 +14,11 @@ import Cart from './pages/Cart'
 import Login from './pages/Login'
 import PlaceOrder from './pages/PlaceOrder'
 import Orders from './pages/Orders'
+import Footer from './components/Footer.jsx'
 
 const App = () => {
   return (
-    <div className=' sm:px-[5vw] md:px-[7vw] lg:px[9vw]'>
+    <div className='sm:px-[5vw] md:px-[7vw] lg:px[9vw]'>
 
     <Navbar/>
     <Routes>
@@ -32,6 +33,7 @@ const App = () => {
         <Route path='/orders' element={<Orders/>}/>
 
     </Routes>
+    <Footer/>
     </div>
   )
 }
