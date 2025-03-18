@@ -15,12 +15,14 @@ import Login from './pages/Login'
 import PlaceOrder from './pages/PlaceOrder'
 import Orders from './pages/Orders'
 import Footer from './components/Footer.jsx'
+import SearchBar from './components/SearchBar.jsx'
 
 const App = () => {
   return (
     <div className='sm:px-[5vw] md:px-[7vw] lg:px[9vw]'>
 
     <Navbar/>
+    <SearchBar/>
     <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/collection' element={<Collection/>}/>
