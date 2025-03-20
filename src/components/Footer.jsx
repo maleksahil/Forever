@@ -1,43 +1,56 @@
-import React from 'react'
-import { assets } from '../assets/assets'
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { assets } from "../assets/assets";
 
 const Footer = () => {
+  useEffect(() => {
+    AOS.init({ duration: 800, easing: "ease-in-out" });
+  }, []);
+
   return (
-    <div>
-      <div className='flex flex-col md:flex-row sm:grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm'>
-         
-         <div>
-            <img src={assets.logo} className='mb-5 w-32' alt=''/>
-            <p className='w-full md:w-1/3  text-gray-600'>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </p>
-         </div>
+    <footer className=" text-gray-700 py-14 px-6">
+      <div
+        className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-14 text-sm"
+        data-aos="fade-up"
+      >
+        {/* Logo & Description */}
+        <div>
+          <img src={assets.logo} className="mb-5 w-32" alt="Logo" />
+          <p className="text-gray-600 leading-relaxed max-w-md">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            It has been the industry's standard dummy text since the 1500s.
+          </p>
+        </div>
 
-         <div>
-            <p className='text-xl font-medium mb-5'>COMPANY</p>
-            <ul className='flex flex-col gap-1 text-gray-600'>
-                <li>Home</li>
-                <li>About us</li>
-                <li>Delivery</li>
-                <li>Privacy pollicy</li>
-            </ul>
-         </div>
+        {/* Company Links */}
+        <div>
+          <p className="text-lg font-semibold mb-4">COMPANY</p>
+          <ul className="flex flex-col gap-2 text-gray-600">
+            <li className="hover:text-red-500 cursor-pointer transition">Home</li>
+            <li className="hover:text-red-500 cursor-pointer transition">About Us</li>
+            <li className="hover:text-red-500 cursor-pointer transition">Delivery</li>
+            <li className="hover:text-red-500 cursor-pointer transition">Privacy Policy</li>
+          </ul>
+        </div>
 
-         <div>
-            <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
-            <ul className='flex flex-col gap-1 text-gray-600'>
-                  <li>+1-212-456-7890</li>
-                  <li>constact@foreveryou.com</li>
-            </ul>
-         </div>
+        {/* Contact Info */}
+        <div>
+          <p className="text-lg font-semibold mb-4">GET IN TOUCH</p>
+          <ul className="flex flex-col gap-2 text-gray-600">
+            <li className="hover:text-red-500 cursor-pointer transition">+1-212-456-7890</li>
+            <li className="hover:text-red-500 cursor-pointer transition">contact@foreveryou.com</li>
+          </ul>
+        </div>
       </div>
 
-      <div>
-        <hr/>
-        <p className='py-5 text-sm text-center'>Copyright 2024@foreveryou.com</p>
+      {/* Copyright Section */}
+      <div className="mt-10">
+        <hr className="border-gray-300" />
+        <p className="py-4 text-center text-sm">© 2024 ForeverYou.com. All Rights Reserved.</p>
       </div>
-    </div>
-  )
-}
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;

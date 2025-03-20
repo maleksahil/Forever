@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 //import components
-import Navbar from './components/Navbar.jsx'
+
 
 //improt pages
 import Home from './pages/Home'
@@ -21,7 +21,7 @@ const App = () => {
   return (
     <div className='sm:px-[5vw] md:px-[7vw] lg:px[9vw]'>
 
-    <Navbar/>
+    
     <SearchBar/>
     <Routes>
         <Route path='/' element={<Home/>}/>
